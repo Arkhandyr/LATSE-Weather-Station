@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto+Mono:wght@600&amp;display=swap" rel="stylesheet">
     <title>LATSE Weather Station</title>
-</head>
+<style type="text/css" id="operaUserStyle"></style><style type="text/css"></style></head>
 <body>
     <div class="header">
         <img class="logo" src="https://www.ufrgs.br/latse/wp-content/uploads/2022/03/cropped-latse-logo1.png" alt="LATSE" width="60" height="60">
@@ -18,62 +16,34 @@
     <div class="container">
         <div class="gallery">
             <a>
-                <img id="dynamic-image" src="loading2.gif" alt="Scraped Image">
+                <img id="dynamic-image" src="https://s3.amazonaws.com/images.thingspeak.com/plugins/577547/Hhb_4AZcSPzbzRWgH6RiKg.png?1725072132345" alt="Scraped Image">
             </a>
             <div class="desc">Windrose</div>
         </div>
         <div class="gallery">
             <a>
-                <img id="dynamic-image2" src="loading2.gif" alt="Scraped Image">
+                <img id="dynamic-image2" src="https://s3.amazonaws.com/images.thingspeak.com/plugins/580156/PwgGbUrMWKa7EtKPvUdk0Q.png?1725072134127" alt="Scraped Image">
             </a>
             <div class="desc">Umidade</div>
         </div>
         <div class="gallery">
             <a>
-                <img id="dynamic-image3" src="loading2.gif" alt="Scraped Image">
+                <img id="dynamic-image3" src="https://s3.amazonaws.com/images.thingspeak.com/plugins/580223/1KdVg8n2q_fvOv4bJ3q9KA.png?1725072140135" alt="Scraped Image">
             </a>
             <div class="desc">Chuva</div>
         </div>
         <div class="gallery">
             <a>
-                <img id="dynamic-image4" src="loading2.gif" alt="Scraped Image">
+                <img id="dynamic-image4" src="https://s3.amazonaws.com/images.thingspeak.com/plugins/577545/_KoYjzN6Ufjf4eJfvPUIDQ.png?1725072145435" alt="Scraped Image">
             </a>
             <div class="desc">Vento</div>
         </div>
         <div class="gallery">
             <a>
-                <img id="dynamic-image5" src="loading2.gif" alt="Scraped Image">
+                <img id="dynamic-image5" src="https://s3.amazonaws.com/images.thingspeak.com/plugins/580073/-pBqdif8cSD1XGT74SFW1Q.png?1725072148621" alt="Scraped Image">
             </a>
             <div class="desc">Temperatura e Vento</div>
         </div>
     </div>
-    
-    <script>
-        // Function to run the scraping script and update the image
-        const loadImages = async () => {
-            try {
-                // Trigger the scraping script
-                await fetch('/run-scraping-script');
-                
-                // Fetch the image URL from the JSON file
-                const response = await fetch('/get-image-url');
-                if (!response.ok) throw new Error('Failed to fetch image URL');
-                
-                const data = await response.json();
 
-                // Set the src of the image element
-                document.getElementById('dynamic-image').src = data.windrose;
-                document.getElementById('dynamic-image2').src = data.umidade;
-                document.getElementById('dynamic-image3').src = data.chuva;
-                document.getElementById('dynamic-image4').src = data.vento;
-                document.getElementById('dynamic-image5').src = data.temperatura_e_vento;
-            } catch (error) {
-                console.error('Error loading image:', error);
-            }
-        };
-
-        // Run the function when the page loads
-        window.onload = loadImages;
-    </script>
-</body>
-</html>
+</body></html>
