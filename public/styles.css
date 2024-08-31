@@ -1,0 +1,73 @@
+div.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background-color: black;
+}
+
+body {
+  font-family: Poppins, Helvetica, sans-serif;
+  background-color: #111111;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+div.gallery {
+  /*border: 1px solid #ccc;*/
+  float: left;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  font-size:30px;
+  font-weight: 600;
+  color: #cccccc;
+}
+
+h1 {
+  font-family: Poppins, Helvetica, sans-serif;
+  color: white;
+  font-size: 24px;
+}
+
+ /* Default to horizontal layout for larger screens (desktops) */
+ @media (min-width: 768px) {
+  .container {
+    margin-top: 30px;
+    gap: 30px; /* Space between items */
+    flex-direction: row; /* Align items horizontally */
+  }
+  div.gallery {
+    width: 30%; /* Width of items on larger screens */
+  }
+}
+
+/* Vertical layout for smaller screens (mobiles) */
+@media (max-width: 767px) {
+  .container {
+      flex-direction: column; /* Align items vertically */
+  }
+  div.gallery {
+      width: 90%; /* Width of items on smaller screens */
+  }
+}
